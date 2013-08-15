@@ -24,20 +24,6 @@ class LibroService {
 		Libro.get(idLibro)
 	}
 
-	/** Previously, cuando era en memDB
-	 * 
-
-	@Transactional(readOnly = true)
-	boolean actualizarLibro(Libro libro) {
-		if (libro.hasErrors()) {
-			false
-		} else {
-			return this.guardar(libro)
-		}
-	}
-
-	 * 
-	 */
 	@Transactional
 	boolean actualizarLibro(Libro libro) {
 		if (libro.hasErrors()) {
@@ -48,8 +34,6 @@ class LibroService {
 		}
 	}
 
-	// Este método está aislando la transacción
-	// para evitar hacer un entidad.discard() en cada guardar()
 	@Transactional
 	boolean guardar(entidad) {
 		entidad.save(flush: true)
