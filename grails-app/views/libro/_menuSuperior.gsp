@@ -1,10 +1,10 @@
 <div class="buttons">
 	<g:link class="btn btn-info" action="list">
 		<i class="icon-search icon-white"></i> 
-		${message(code: 'default.search.label', default: 'Buscar libros')}
+		<g:message code="default.list.label" args="[entityName]"/>
 	</g:link>
 	<g:link class="btn btn-info" action="create">
 		<i class="icon-file icon-white"></i> 
-		Nuevo libro
+		<g:message code="default.new.label" args="[entityName]" />
 	</g:link>
 </div>     

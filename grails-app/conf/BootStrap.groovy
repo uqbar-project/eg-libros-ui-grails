@@ -2,7 +2,7 @@ import ar.edu.libros.Libro
 
 class BootStrap {
 
-	def init = { servletContext ->
+    def init = { servletContext ->
 		
 		if (Libro.count() == 0) {
 			println "Generamos juego de datos de libros"
@@ -15,8 +15,7 @@ class BootStrap {
 			new Libro(autor: "Fyodor Dostoyevsky", titulo: "Crimen y castigo", editorial: "Galerna", anioPublicacion: 1866).save(failOnError: true)
 		}
 		
-	}
-
+    }
     def destroy = {
     }
 }

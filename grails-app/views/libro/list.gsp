@@ -8,7 +8,7 @@
 <body>
 	<g:set var="entityName" value="${message(code: 'libro.label', default: 'Libro')}" />
 	<div style="width: 90%; padding: 15pt;">
-		<g:render template="titulo" model="['titulo': 'B&uacute;squeda de libros']"/>
+		<g:render template="titulo" model="['titulo': message(code: 'default.title.label', default: 'B&uacute;squeda de libros')]"/>
 		<g:if test="${flash.message}">
 			<div class="alert alert-info">
 				${flash.message}
@@ -19,18 +19,19 @@
 				<div class="accordion-heading">
 					<a class="accordion-toggle" data-toggle="collapse"
 						data-parent="#accordionPadre" href="#collapseOne">
-						Par&aacute;metros de b&uacute;squeda </a>
+						${message(code: 'default.searchParameters.label', default: 'Par&aacute;metros de b&uacute;squeda')}
+					</a>
 				</div>
 				<div id="collapseOne" class="accordion-body collapse in">
 					<div class="accordion-inner">
 						<form>
 							<fieldset>
-								<label>T&iacute;tulo</label> 
-								<input type="text" name="titulo" id="titulo" class="input" placeholder="Contiene..." value="${libroBusqueda?.titulo}"> 
-								<label>Autor:</label> 
-								<input type="text" class="input" name="autor" id="autor" placeholder="Contiene..." value="${libroBusqueda?.autor}">
+								<label>${message(code: 'libro.titulo.label', default: 'Ti&acute;tulo')}</label> 
+								<input type="text" name="titulo" id="titulo" class="input" placeholder="${message(code: 'default.contains.label', default: 'Contiene...')}" value="${libroBusqueda?.titulo}"> 
+								<label>${message(code: 'libro.autor.label', default: 'Autor')}:</label> 
+								<input type="text" class="input" name="autor" id="autor" placeholder="${message(code: 'default.contains.label', default: 'Contiene...')}" value="${libroBusqueda?.autor}">
 								<br />
-								<button type="submit" class="btn btn-primary">Buscar</button>
+								<button type="submit" class="btn btn-primary">${message(code: 'default.search.label', default: 'Buscar')}</button>
 							</fieldset>
 						</form>
 					</div>
@@ -38,7 +39,7 @@
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-toggle="collapse"
-							data-parent="#accordionPadre" href="#collapseTwo"> Resultados: ${libroInstanceTotal } 
+							data-parent="#accordionPadre" href="#collapseTwo">${message(code: 'default.results.label', default: 'Resultados')}: ${libroInstanceTotal } 
 						</a>
 					</div>
 					<div id="collapseTwo" class="accordion-body collapse in">
@@ -49,7 +50,7 @@
 										<g:sortableColumn property="autor"
 											title="${message(code: 'libro.autor.label', default: 'Autor')}" />
 										<g:sortableColumn property="titulo"
-											title="${message(code: 'libro.titulo.label', default: 'Titulo')}" />
+											title="${message(code: 'libro.titulo.label', default: 'Ti&acute;tulo')}" />
 										<g:sortableColumn property="editorial"
 											title="${message(code: 'libro.editorial.label', default: 'Editorial')}" />
 										<g:sortableColumn property="anioPublicacion"
@@ -85,7 +86,7 @@
 				<div class="accordion-group">
 					<div class="accordion-heading">
 						<a class="accordion-toggle" data-toggle="collapse"
-							data-parent="#accordionPadre" href="#collapseThree"> Acciones
+							data-parent="#accordionPadre" href="#collapseThree">${message(code: 'default.actions.label', default: 'Acciones')} 
 						</a>
 					</div>
 					<div id="collapseThree" class="accordion-body collapse in">

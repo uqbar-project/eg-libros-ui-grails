@@ -9,7 +9,7 @@
 <body>
 	<div class="body" style="width: 90%; padding: 15pt;">
 		<g:render template="menuSuperior" model="[entityName: entityName]"></g:render>
-		<g:render template="titulo" model="['titulo': 'Datos del libro']"/>
+		<g:render template="titulo" model="['titulo': message(code: 'default.show.label', args: [entityName])]"/>
 		<g:if test="${flash.message}">
 			<div class="message">
 				${flash.message}
@@ -30,15 +30,15 @@
 			</div>
 			<div class="buttons">
 				<g:hiddenField name="id" value="${libroInstance?.id}" />
-				<g:actionSubmit class="btn btn-primary" action="edit" value="Editar"/>
+				<g:actionSubmit class="btn btn-primary" action="edit" value="${message(code: 'default.edit.label', args: [entityName])}"/>
 				<!--  se pueden poner botones con íconos como éste
 				<button class="btn btn-primary" name="_action_edit" value="Editar">
 					<i class="icon-file icon-white"></i>Editar
 				</button>
 				 -->
-				<g:actionSubmit class="btn btn-primary" action="delete" value="Eliminar"/>
+				<g:actionSubmit class="btn btn-primary" action="delete" value="${message(code: 'default.delete.label', args: [entityName])}"/>
 				<g:link class="btn btn-primary" action="list">
-					Cancelar
+					<g:message code="default.cancel.label" />
 				</g:link>
 			</div>
 		</g:form>

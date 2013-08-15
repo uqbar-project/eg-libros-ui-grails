@@ -19,11 +19,8 @@ environments {
     }
     test {
         dataSource {
-			dbCreate = "update"
-			url = "jdbc:mysql://localhost/libros"
-			driverClassName = "com.mysql.jdbc.Driver"
-			username = "root"
-			password = "laura"
+            dbCreate = "update"
+            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
         }
     }
     production {
