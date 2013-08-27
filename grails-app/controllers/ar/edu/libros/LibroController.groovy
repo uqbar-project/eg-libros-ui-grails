@@ -7,7 +7,7 @@ import ar.edu.libros.exceptions.UpdateException
 
 class LibroController {
 
-	def LibroService
+	def libroService
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -33,50 +33,38 @@ class LibroController {
 		def version = params.version
 		if (id) {
 			libroInstance = libroService.getLibro(id)
-			defaultMessage = "default.updated.message"
+			defaultMessage = "El libro se actualizó correctamente"
 		} else {
 			libroInstance = new Libro()
-			defaultMessage = "default.created.message"
+			defaultMessage = "El libro se generó correctamente"
 		}
 		try {
-			chequearVersion(version, libroInstance)
 			libroInstance.properties = params
-			libroInstance.validar()
-			if (libroService.actualizarLibro(libroInstance)) {
-				flash.message = flash.message = message(code: defaultMessage, args: [message(code: 'libro.label', default: 'Libro'), libroInstance.id])
-				redirect(action: "list")
-			} else {
-				render(view: "edit", model: [libroInstance: libroInstance])
-			}
+			libroService.actualizarLibro(libroInstance)
+			flash.message = defaultMessage
+			redirect(action: "list")
 		} catch (UpdateException e) {
-			flash.message = "${message(code: 'default.updated.message', args: [message(code: 'libro.label', default: 'Libro'), libroInstance.id])}"
+			flash.message = "Hubo un error al actualizar el libro"
 			redirect(action: "show", id: libroInstance.id)
 		} catch (ConcurrentModificationException e) {
-			render(view: "edit", model: [libroInstance: libroInstance, alta: false])
+			this.handleEditionError(libroInstance)
+		} catch (RuntimeException e) {
+			this.handleEditionError(libroInstance)
 		}
 	}
 
+	def handleEditionError(libro) {
+		render(view: "edit", model: [libroInstance: libro, alta: libro.id == null])
+	}
+	
 	def show(Long id) {
-		def libroInstance = libroService.getLibro(id)
-		if (!libroInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [
-				message(code: 'libro.label', default: 'Libro'),
-				id
-			])
-			redirect(action: "list")
-		}
-		else {
-			[libroInstance: libroInstance]
-		}
+		edit(id)
 	}
 
 	def edit(Long id) {
 		def libroInstance = libroService.getLibro(id)
 		if (!libroInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [
-				message(code: 'libro.label', default: 'Libro'),
-				id
-			])
+			flash.message = "Libro " + id + " no encontrado"
 			redirect(action: "list")
 		}
 		else {
@@ -85,40 +73,14 @@ class LibroController {
 	}
 
 	def delete(Long id) {
-		def libroInstance = Libro.get(id)
-		if (!libroInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [
-				message(code: 'libro.label', default: 'Libro'),
-				id
-			])
-			redirect(action: "list")
-			return
-		}
-
+		def libroInstance = libroService.getLibro(id)
 		try {
-			libroInstance.delete(flush: true)
-			flash.message = message(code: 'default.deleted.message', args: [
-				message(code: 'libro.label', default: 'Libro'),
-				id
-			])
+			libroService.eliminarLibro(libroInstance)
+			flash.message = "Libro eliminado"
 			redirect(action: "list")
-		}
-		catch (DataIntegrityViolationException e) {
-			flash.message = message(code: 'default.not.deleted.message', args: [
-				message(code: 'libro.label', default: 'Libro'),
-				id
-			])
+		} catch (Exception e) {
+			flash.message = "Hubo un error al eliminar el libro"
 			redirect(action: "show", id: id)
-		}
-	}
-
-	private def chequearVersion(pVersion, domainObject) {
-		if (pVersion) {
-			def version = pVersion.toLong()
-			if (domainObject.version > version) {
-				domainObject.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'libro.label', default: 'Libro')] as Object[], "Another user has updated this Libro while you were editing")
-				throw new ConcurrentModificationException()
-			}
 		}
 	}
 }
