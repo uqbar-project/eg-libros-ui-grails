@@ -25,18 +25,13 @@ class LibroService {
 	}
 
 	@Transactional
-	boolean actualizarLibro(Libro libro) {
+	void actualizarLibro(Libro libro) {
+		libro.validar()
 		if (libro.hasErrors()) {
-			libro.discard()
-			return false
+			throw new RuntimeException("Error validacion")
 		} else {
-			return this.guardar(libro)
+			libro.save(flush: true)
 		}
-	}
-
-	@Transactional
-	boolean guardar(entidad) {
-		entidad.save(flush: true)
 	}
 
 	@Transactional
