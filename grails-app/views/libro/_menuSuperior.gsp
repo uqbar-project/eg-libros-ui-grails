@@ -5,6 +5,6 @@
 	</g:link>
 	<g:link class="btn btn-info" action="create">
 		<i class="icon-file icon-white"></i> 
-		Ver Libro
+		Crear Libro
 	</g:link>
 </div>     
