@@ -28,21 +28,21 @@
 		<form class="form-horizontal" action="save" method="post">
 			<g:hiddenField name="id" value="${libroInstance?.id}" />
 			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('autor') ? 'error' : ''}">
-				<label class="control-label" for="autor"><g:message code="libro.autor.label" default="Autor" /> </label>
+				<label class="control-label" for="autor">Autor</label>
 				<div class="controls">
-					<input class="input-large" type="text" name="autor" id="autor" placeholder="${message(code: 'libro.autor.label', default: 'Autor')}" value="${libroInstance?.autor}" />
+					<input class="input-large" type="text" name="autor" id="autor" placeholder="Autor" value="${libroInstance?.autor}" />
 				</div>
 			</div>
 			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('titulo') ? 'error' : ''}">
-				<label class="control-label" for="titulo"><g:message code="libro.titulo.label" default="Titulo" /> </label>
+				<label class="control-label" for="titulo">T&iacute;tulo</label>
 				<div class="controls">
-					<input class="input-xxlarge" type="text" name="titulo" id="titulo" placeholder="${message(code: 'libro.titulo.label', default: 'Titulo')}" value="${libroInstance?.titulo}" />
+					<input class="input-xxlarge" type="text" name="titulo" id="titulo" placeholder="T&iacute;tulo" value="${libroInstance?.titulo}" />
 				</div>
 			</div>
 			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('editorial') ? 'error' : ''}">
-				<label class="control-label" for="editorial"><g:message code="libro.editorial.label" default="Editorial" /> </label>
+				<label class="control-label" for="editorial">Editorial</label>
 				<div class="controls">
-					<input class="input-large" type="text" name="editorial" id="editorial" placeholder="${message(code: 'libro.editorial.label', default: 'Editorial')}" value="${libroInstance?.editorial}" />
+					<input class="input-large" type="text" name="editorial" id="editorial" placeholder="Editorial" value="${libroInstance?.editorial}" />
 				</div>
 			</div>
 			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('anioPublicacion') ? 'error' : ''}">

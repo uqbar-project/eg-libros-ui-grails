@@ -25,13 +25,20 @@ class HomeLibrosImpl implements HomeLibros {
 	/** fin singleton **/
 	
 	override agregarLibro(Libro libro) {
-		libro.id = new Long(libros.size() + 1)
+		libro.id = new Long(this.ultimoIdUtilizado.longValue + 1)
 		libros.add(libro)
+	}
+	
+	def int getUltimoIdUtilizado() {
+		if (libros.isEmpty) {
+			return 1
+		}
+		return libros.sortBy [ -it.id ].toList.get(0).id.intValue
 	}
 
 	override actualizarLibro(Libro libroActualizado) {
 		libroActualizado.validar
-		if(libroActualizado.id == null) {
+		if (libroActualizado.id == null) {
 			this.agregarLibro(libroActualizado)
 		} else {
 			this.doActualizarLibro(libroActualizado)
@@ -39,7 +46,7 @@ class HomeLibrosImpl implements HomeLibros {
 	}
 
 	def doActualizarLibro(Libro libroActualizado) {
-		val unLibro = this.getLibro(libroActualizado.id)
+		val unLibro = this.getLibro(libroActualizado.id).copy
 		unLibro.actualizarCon(libroActualizado)
 	}
 
@@ -48,7 +55,7 @@ class HomeLibrosImpl implements HomeLibros {
 	}
 
 	override getLibro(Long id) {
-		libros.findFirst[libro|libro.id.equals(id)].copy
+		libros.findFirst[libro|libro.id.equals(id)]
 	}
 
 	override getLibros(Libro libroBusqueda) {

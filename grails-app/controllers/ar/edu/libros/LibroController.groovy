@@ -29,7 +29,7 @@ class LibroController {
 	def save() {
 		def libroInstance = null
 		def defaultMessage = null
-		def id = params.id as Long
+		def id = params.id ? params.id as Long : null
 		if (id) {
 			libroInstance = homeLibros.getLibro(id)
 			defaultMessage = "El libro se actualizó correctamente"
@@ -81,9 +81,15 @@ class LibroController {
 	}
 
 	def mapear(libro, params) {
-		libro.autor = params.autor
-		libro.titulo = params.titulo
-		libro.editorial = params.editorial
+		if (params.autor) {
+			libro.autor = params.autor
+		}
+		if (params.titulo) {
+			libro.titulo = params.titulo
+		}
+		if (params.editorial) {
+			libro.editorial = params.editorial
+		}
 		if (params.anioPublicacion) {
 			libro.anioPublicacion = new Integer(params.anioPublicacion)
 		}
