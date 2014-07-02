@@ -1,4 +1,3 @@
-<%@ page import="ar.edu.libros.Libro"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +5,8 @@
 	<meta name="layout" content="main" />
 </head>
 <body>
-	<g:set var="entityName" value="${message(code: 'libro.label', default: 'Libro')}" />
 	<div style="width: 90%; padding: 15pt;">
-		<g:render template="titulo" model="['titulo': message(code: 'default.title.label', default: 'B&uacute;squeda de libros')]"/>
+		<g:render template="titulo" model="['titulo': 'B&uacute;squeda de libros']"/>
 		<g:if test="${flash.message}">
 			<div class="alert alert-info">
 				${flash.message}
@@ -19,7 +17,7 @@
 				<div class="accordion-heading">
 					<a class="accordion-toggle" data-toggle="collapse"
 						data-parent="#accordionPadre" href="#collapseOne">
-						${message(code: 'default.searchParameters.label', default: 'Par&aacute;metros de b&uacute;squeda')}
+						Par&aacute;metros de b&uacute;squeda
 					</a>
 				</div>
 				<div id="collapseOne" class="accordion-body collapse in">

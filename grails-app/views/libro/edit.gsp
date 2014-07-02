@@ -1,21 +1,18 @@
-<%@ page import="ar.edu.libros.Libro"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="layout" content="main" />
-<g:set var="entityName" value="${message(code: 'libro.label', default: 'Libro')}" />
-<title><g:message code="default.create.label" args="[entityName]" /></title>
+<title>Busqueda de libros</title>
 </head>
 <body>
 	<div class="body" style="width: 90%; padding: 15pt;">
-		
-		<g:render template="menuSuperior" model="[entityName: entityName]"></g:render>
+		<g:render template="menuSuperior"></g:render>
 		
 		<g:if test="${alta}">
-			<g:set var="titulo" value="${message(code: 'default.create.label', args: [entityName])}"/>
+			<g:set var="titulo" value="Crear libro"/>
 		</g:if>
 		<g:else>
-			<g:set var="titulo" value="${message(code: 'default.edit.label', args: [entityName])}"/>
+			<g:set var="titulo" value="Actualizar libro"/>
 		</g:else>
 		<g:render template="titulo" model="['titulo': titulo]"/>
 		<g:if test="${flash.message}">
@@ -23,42 +20,41 @@
 				${flash.message}
 			</div>
 		</g:if>
-		<g:hasErrors bean="${libroInstance}">
+		<g:if test="${exception}">
 			<div class="alert alert-error">
-				<g:renderErrors bean="${libroInstance}" as="list" />
+				${exception.message}
 			</div>
-		</g:hasErrors>
+		</g:if>
 		<form class="form-horizontal" action="save" method="post">
 			<g:hiddenField name="id" value="${libroInstance?.id}" />
-			<g:hiddenField name="version" value="${libroInstance?.version}" />
-			<div class="control-group ${hasErrors(bean: libroInstance, field: 'autor', 'error')}">
+			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('autor') ? 'error' : ''}">
 				<label class="control-label" for="autor"><g:message code="libro.autor.label" default="Autor" /> </label>
 				<div class="controls">
 					<input class="input-large" type="text" name="autor" id="autor" placeholder="${message(code: 'libro.autor.label', default: 'Autor')}" value="${libroInstance?.autor}" />
 				</div>
 			</div>
-			<div class="control-group ${hasErrors(bean: libroInstance, field: 'titulo', 'error')}">
+			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('titulo') ? 'error' : ''}">
 				<label class="control-label" for="titulo"><g:message code="libro.titulo.label" default="Titulo" /> </label>
 				<div class="controls">
 					<input class="input-xxlarge" type="text" name="titulo" id="titulo" placeholder="${message(code: 'libro.titulo.label', default: 'Titulo')}" value="${libroInstance?.titulo}" />
 				</div>
 			</div>
-			<div class="control-group ${hasErrors(bean: libroInstance, field: 'editorial', 'error')}">
+			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('editorial') ? 'error' : ''}">
 				<label class="control-label" for="editorial"><g:message code="libro.editorial.label" default="Editorial" /> </label>
 				<div class="controls">
 					<input class="input-large" type="text" name="editorial" id="editorial" placeholder="${message(code: 'libro.editorial.label', default: 'Editorial')}" value="${libroInstance?.editorial}" />
 				</div>
 			</div>
-			<div class="control-group ${hasErrors(bean: libroInstance, field: 'anioPublicacion', 'error')}">
-				<label class="control-label" for="editorial"><g:message code="libro.anioPublicacion.label" default="A&ntilde;o de Publicaci&oacute;n" /> </label>
+			<div class="control-group ${exception?.campoOrigen?.equalsIgnoreCase('anioPublicacion') ? 'error' : ''}">
+				<label class="control-label" for="editorial">A&ntilde;o de Publicaci&oacute;n</label>
 				<div class="controls">
-					<input class="input-medium" type="text" name="anioPublicacion" id="anioPublicacion" placeholder="${message(code: 'libro.anioPublicacion.label', default: 'A&ntilde;o de Publicaci&oacute;n')}" value="${libroInstance?.anioPublicacion}" />
+					<input class="input-medium" type="text" name="anioPublicacion" id="anioPublicacion" placeholder="A&ntilde;o de Publicaci&oacute;n" value="${libroInstance?.anioPublicacion}" />
 				</div>
 			</div>
 			<div class="buttons">
-				<input type="submit" class="btn btn-primary" value="<g:message code="default.add.label" args="[entityName]" />" />
+				<input type="submit" class="btn btn-primary" value="Aceptar" />
 				<g:link class="btn btn-primary" action="list">
-					<g:message code="default.cancel.label" />
+					Cancelar
 				</g:link>
 			</div>
 		</form>
