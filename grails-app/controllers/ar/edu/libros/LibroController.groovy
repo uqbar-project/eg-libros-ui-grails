@@ -83,15 +83,23 @@ class LibroController {
 	def mapear(libro, params) {
 		if (params.autor) {
 			libro.autor = params.autor
+		} else {
+			libro.autor = null
 		}
 		if (params.titulo) {
 			libro.titulo = params.titulo
+		} else {
+			libro.titulo = null
 		}
 		if (params.editorial) {
 			libro.editorial = params.editorial
+		} else {
+			libro.editorial = null
 		}
 		if (params.anioPublicacion) {
 			libro.anioPublicacion = new Integer(params.anioPublicacion)
+		} else {
+			libro.anioPublicacion = null
 		}
 		libro
 	}
