@@ -5,6 +5,10 @@
 // You're free to add application-wide JavaScript to this file, but it's generally better 
 // to create separate JavaScript files as needed.
 //
+// Nota: el plugin de angular lo descargamos mediante bower
+// bower install angular
+// http://vasya10.wordpress.com/2014/03/01/grails-application-with-angularjs-setup-part-1/
+//
 //= require jquery
 //= require angular/angular
 //= require_tree views
