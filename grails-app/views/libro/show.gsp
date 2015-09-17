@@ -14,19 +14,26 @@
 			</div>
 		</g:if>
 		<g:form class="form-horizontal" method="post">
-			<div class="control-group">
-				<label class="control-label" for="autor">Autor&nbsp;&nbsp; </label> <span class="input-xlarge uneditable-input"> ${libroInstance?.autor} </span>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="titulo">T&iacute;tulo&nbsp;&nbsp; </label> <span class="input-xxlarge uneditable-input"> ${libroInstance?.titulo} </span>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="editorial">Editorial&nbsp;&nbsp; </label> <span class="input-xlarge uneditable-input"> ${libroInstance?.editorial} </span>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="editorial">A&ntilde;o de Publicaci&oacute;n&nbsp;&nbsp; </label> <span class="input-large uneditable-input"> ${libroInstance?.anioPublicacion} </span>
+			<div class="row">
+				<div class="col-md-6">
+					<label class="control-label" for="autor">Autor&nbsp;&nbsp; </label> 
+					<input class="readOnly form-control" type="text" value="${libroInstance?.autor}"/>
+				</div>
+				<div class="col-md-6">
+					<label class="control-label" for="titulo">T&iacute;tulo&nbsp;&nbsp; </label>
+					<input class="readOnly form-control" type="text" value="${libroInstance?.titulo}"/>
+				</div>
+				<div class="col-md-6">	
+					<label class="control-label" for="editorial">Editorial&nbsp;&nbsp; </label> 
+					<input class="readOnly form-control" type="text" value="${libroInstance?.editorial}"/>
+				</div>
+				<div class="col-md-6">
+					<label class="control-label" for="editorial">A&ntilde;o de Publicaci&oacute;n&nbsp;&nbsp; </label>
+					<input class="readOnly form-control" type="text" value="${libroInstance?.anioPublicacion}"/> 
+				</div>
 			</div>
 			<div class="buttons">
+				<br>
 				<g:hiddenField name="id" value="${libroInstance?.id}" />
 				<g:actionSubmit class="btn btn-primary" action="edit" value="Editar"/>
 				<!--  se pueden poner botones con íconos como éste

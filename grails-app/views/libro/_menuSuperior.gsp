@@ -1,10 +1,10 @@
 <div class="buttons">
 	<g:link class="btn btn-info" action="list">
-		<i class="icon-search icon-white"></i> 
+		<span class="glyphicon glyphicon-search"></span> 
 		Buscar
 	</g:link>
 	<g:link class="btn btn-info" action="create">
-		<i class="icon-file icon-white"></i> 
+		<span class="glyphicon glyphicon-file"></span> 
 		Crear Libro
 	</g:link>
 </div>     
