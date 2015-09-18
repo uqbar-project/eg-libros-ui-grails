@@ -11,7 +11,7 @@ class SystemException extends RuntimeException {
 		super(msg, cause)
 	}
 	
-	def getCampo() {
+	def getCampoOrigen() {
 		null
 	}
 	
