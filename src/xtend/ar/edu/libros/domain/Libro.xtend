@@ -2,14 +2,16 @@ package ar.edu.libros.domain
 
 import ar.edu.libros.exceptions.BusinessException
 import java.util.Date
+import org.eclipse.xtend.lib.annotations.Accessors
 
+@Accessors
 class Libro implements Cloneable {
 
-	@Property Long id
-	@Property String autor
-	@Property String titulo
-	@Property String editorial
-	@Property Integer anioPublicacion
+	Long id
+	String autor
+	String titulo
+	String editorial
+	Integer anioPublicacion
 
 	new() {
 		autor = ""
