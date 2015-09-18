@@ -45,7 +45,7 @@ class LibroController {
 		} catch (BusinessException e) {
 			this.handleEditionError(libroInstance, e)
 		} catch (Exception e) {
-			this.handleEditionError(libroInstance, new SystemException("Ha ocurrido un error. Consulte al administrador"))
+			this.handleEditionError(libroInstance, new SystemException("Ha ocurrido un error. Consulte al administrador", e))
 		}
 	}
 

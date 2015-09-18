@@ -1,10 +1,11 @@
 package ar.edu.libros.exceptions
 
-import java.lang.RuntimeException
+import org.eclipse.xtend.lib.annotations.Accessors
 
+@Accessors
 class BusinessException extends RuntimeException {
 
-	@Property String campoOrigen
+	String campoOrigen
 	
 	new(String campoOrigen, String msg) {
 		super(msg)
