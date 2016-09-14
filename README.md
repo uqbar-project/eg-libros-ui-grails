@@ -23,4 +23,11 @@ donde se cuenta la navegación entre
 * Grails 2.4.2
 * en un entorno GGTS 3.6.0
 * con Twitter Boostrap 3.2.0
-* con una JDK < 1.8 (para que no aparezcan warnings)
+
+### Para que funcione en GGTS 3.6.0
+
+La JDK de Grails puede ser 1.8, pero debe configurarse el compilador de Xtend para que compile con compatibilidad Java 7 o menor por un tema de retrocompatibilidad del IDE de Grails. Esto se hace definiendo
+Window > Preferences > Xtend > Compiler y destildando la opción "Use source compatibility level from Java settings",
+hay que seleccionar entre las opciones Java 7
+
+
