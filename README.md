@@ -33,6 +33,4 @@ Window > Preferences > Xtend > Compiler
 
 y destildando la opción "Use source compatibility level from Java settings", hay que seleccionar entre las opciones Java 7.
 
-
-
-
+![grails-xtend-integration](https://cloud.githubusercontent.com/assets/4549002/18527938/38b8b54a-7a9d-11e6-9a57-0fdcd988d480.png)
