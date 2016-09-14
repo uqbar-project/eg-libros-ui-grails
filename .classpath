@@ -128,12 +128,12 @@
 			<attribute name="org.grails.ide.eclipse.core.SOURCE_FOLDER" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path=".link_to_grails_plugins/tomcat-7.0.54/src/groovy">
+	<classpathentry kind="src" path=".link_to_grails_plugins/tomcat-8.0.33/src/groovy">
 		<attributes>
 			<attribute name="org.grails.ide.eclipse.core.SOURCE_FOLDER" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path=".link_to_grails_plugins/tomcat-7.0.54/src/java">
+	<classpathentry kind="src" path=".link_to_grails_plugins/tomcat-8.0.33/src/java">
 		<attributes>
 			<attribute name="org.grails.ide.eclipse.core.SOURCE_FOLDER" value="true"/>
 		</attributes>

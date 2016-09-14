@@ -1,7 +1,7 @@
 package ar.edu.libros.domain
 
 import ar.edu.libros.exceptions.BusinessException
-import java.util.Date
+import java.util.Calendar
 import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
@@ -43,7 +43,7 @@ class Libro implements Cloneable {
 		if (anioPublicacion == null) {
 			throw new BusinessException("anioPublicacion", "Debe completar el año de publicación")
 		} else {
-			if (anioPublicacion > new Date().year + 1900) {
+			if (anioPublicacion > Calendar.instance.get(Calendar.YEAR)) {
 				throw new BusinessException("anioPublicacion", "El año de publicación no puede ser posterior al año actual")
 			}
 		}

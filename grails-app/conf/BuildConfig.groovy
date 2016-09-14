@@ -3,8 +3,8 @@ grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
-grails.project.target.level = 1.6
-grails.project.source.level = 1.6
+grails.project.target.level = 1.8
+grails.project.source.level = 1.8
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 // uncomment (and adjust settings) to fork the JVM to isolate classpaths
@@ -42,12 +42,12 @@ grails.project.dependency.resolution = {
 
 	dependencies {
 		// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-		build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.7.3'
+		build 'org.eclipse.xtend:org.eclipse.xtend.lib:2.10.0'
 		// runtime 'mysql:mysql-connector-java:5.1.22'
 	}
 
 	plugins {
-		build ":tomcat:7.0.54"
+		build ":tomcat:8.0.33"
 
 		// plugins for the compile step
 		compile ":scaffolding:2.1.2"
@@ -55,7 +55,7 @@ grails.project.dependency.resolution = {
 		compile ":asset-pipeline:1.8.11"
 		compile ":mysql-connectorj:5.1.22.1"
 		compile ":twitter-bootstrap:3.2.0"
-
+		
 		// plugins needed at runtime but not for compilation
 		runtime ":hibernate4:4.3.5.4" // or ":hibernate:3.6.10.16"
 		runtime ":database-migration:1.4.0"

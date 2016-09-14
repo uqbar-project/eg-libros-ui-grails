@@ -14,6 +14,7 @@ class BootStrap {
 		HomeLibrosImpl.instance.agregarLibro(new Libro("Jorge Asís",  "Flores robadas en los jardines de Quilmes", "Planeta", 1981))
 		HomeLibrosImpl.instance.agregarLibro(new Libro("Osvaldo Bayer",  "La Patagonia Rebelde", "Galerna", 1972))
 		HomeLibrosImpl.instance.agregarLibro(new Libro("Fyodor Dostoyevsky",  "Crimen y castigo", "Galerna", 1866))
+		println("Juego de datos generado")
 
 	}
 	def destroy = {
