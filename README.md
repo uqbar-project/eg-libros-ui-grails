@@ -1,3 +1,4 @@
+
 # Actualización de Libros en Grails
 
 <img src="https://cloud.githubusercontent.com/assets/4549002/18517870/40a22aee-7a74-11e6-99e0-211e44d7bacf.png" width="100px;" height="100px;"/>
@@ -22,3 +23,4 @@ donde se cuenta la navegación entre
 * Grails 2.4.2
 * en un entorno GGTS 3.6.0
 * con Twitter Boostrap 3.2.0
+* con una JDK < 1.8 (para que no aparezcan warnings)
