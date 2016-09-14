@@ -1,6 +1,6 @@
 # Actualización de Libros en Grails
 
-![books](https://cloud.githubusercontent.com/assets/4549002/18517870/40a22aee-7a74-11e6-99e0-211e44d7bacf.png)
+<img src="https://cloud.githubusercontent.com/assets/4549002/18517870/40a22aee-7a74-11e6-99e0-211e44d7bacf.png" style="width: 100px; height: 100px;"/>
 
 ## Explicación
 
