@@ -23,7 +23,7 @@ donde se cuenta la navegación entre
 * Grails 2.4.2
 * en un entorno GGTS 3.6.0
 * con Twitter Boostrap 3.2.0
-* con Xtend 2.10.0 [aquí están las instrucciones] para instalar el plugin de Xtend(http://uqbar-wiki.org/index.php?title=Integraci%C3%B3n_Grails_con_Xtend)
+* con Xtend 2.10.0 [aquí están las instrucciones] para instalar el [plugin de Xtend](http://uqbar-wiki.org/index.php?title=Integraci%C3%B3n_Grails_con_Xtend)
 
 ### Para que funcione en GGTS 3.6.0
 
