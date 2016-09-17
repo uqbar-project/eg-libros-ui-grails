@@ -15,8 +15,8 @@ donde se cuenta la navegación entre
 
 ## Consideraciones
 
+* Antes que nada [instalar el plugin de Xtend](http://uqbar-wiki.org/index.php?title=Integraci%C3%B3n_Grails_con_Xtend)
 * Para el branch **master**
- * [Instalar el plugin de Xtend](http://uqbar-wiki.org/index.php?title=Integraci%C3%B3n_Grails_con_Xtend)
  * El objeto de dominio está en Xtend
  * También el repositorio (objeto de acceso a datos)
  * Los controllers y las vistas son propias de Grails
