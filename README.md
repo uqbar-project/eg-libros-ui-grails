@@ -17,14 +17,14 @@ donde se cuenta la navegación entre
 
 * Antes que nada [instalar el plugin de Xtend](http://uqbar-wiki.org/index.php?title=Integraci%C3%B3n_Grails_con_Xtend)
 * Para el branch **master**
- * El objeto de dominio está en Xtend
- * También el repositorio (objeto de acceso a datos)
- * Los controllers y las vistas son propias de Grails
+ * el objeto de dominio está en Xtend
+ * también el repositorio (objeto de acceso a datos)
+ * los controllers y las vistas son propias de Grails
 * Para el branch **angular**
- * Muestra cómo se integra Grails con una tecnología RIA como AngularJS. 
- * Los libros se obtienen de un servicio REST que devuelve libros como JSON.
- * en el cliente se utiliza un filtro de AngularJS. 
- * Los objetos de dominio Libro están hechos en Xtend 
+ * muestra cómo se integra Grails con una tecnología RIA como AngularJS
+ * los libros se obtienen de un servicio REST que devuelve libros como JSON
+ * en el cliente se utiliza un filtro de AngularJS
+ * los objetos de dominio Libro están hechos en Xtend 
 
 ## Versiones actuales
 
